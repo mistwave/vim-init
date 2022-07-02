@@ -117,7 +117,7 @@ if index(g:bundle_group, 'basic') >= 0
 	Plug 'skywind3000/vim-preview'
 
 	" Git 支持
-	Plug 'tpope/vim-fugitive'
+	" Plug 'tpope/vim-fugitive'
 
 	" 使用 ALT+E 来选择窗口
 	nmap <m-e> <Plug>(choosewin)
@@ -639,4 +639,5 @@ let g:ycm_semantic_triggers =  {
 "----------------------------------------------------------------------
 "
 Plug 'aonemd/quietlight.vim'
+Plug 'Valloric/YouCompleteMe'
 
