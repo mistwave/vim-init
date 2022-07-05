@@ -53,6 +53,8 @@ Plug 'godlygeek/tabular', { 'on': 'Tabularize' }
 " Diff 增强，支持 histogram / patience 等更科学的 diff 算法
 Plug 'chrisbra/vim-diff-enhanced'
 
+" auto completion
+Plug 'Valloric/YouCompleteMe'
 
 "----------------------------------------------------------------------
 " Dirvish 设置：自动排序并隐藏文件，同时定位到相关文件
@@ -94,8 +96,8 @@ if index(g:bundle_group, 'basic') >= 0
 	" 展示开始画面，显示最近编辑过的文件
 	Plug 'mhinz/vim-startify'
 
-	" 一次性安装一大堆 colorscheme
-	Plug 'flazz/vim-colorschemes'
+	" colorscheme
+	Plug 'NLKNguyen/papercolor-theme'
 
 	" 支持库，给其他插件用的函数库
 	Plug 'xolox/vim-misc'
@@ -117,7 +119,7 @@ if index(g:bundle_group, 'basic') >= 0
 	Plug 'skywind3000/vim-preview'
 
 	" Git 支持
-	" Plug 'tpope/vim-fugitive'
+	Plug 'tpope/vim-fugitive'
 
 	" 使用 ALT+E 来选择窗口
 	nmap <m-e> <Plug>(choosewin)
@@ -634,10 +636,4 @@ let g:ycm_semantic_triggers =  {
 			\ 'cs,lua,javascript': ['re!\w{2}'],
 			\ }
 
-"----------------------------------------------------------------------
-" one theme for vim
-"----------------------------------------------------------------------
-"
-Plug 'aonemd/quietlight.vim'
-Plug 'Valloric/YouCompleteMe'
 
