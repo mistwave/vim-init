@@ -260,16 +260,16 @@ endif
 if index(g:bundle_group, 'filetypes') >= 0
 
 	" powershell 脚本文件的语法高亮
-	Plug 'pprovost/vim-ps1', { 'for': 'ps1' }
+	" Plug 'pprovost/vim-ps1', { 'for': 'ps1' }
 
 	" lua 语法高亮增强
-	Plug 'tbastos/vim-lua', { 'for': 'lua' }
+	" Plug 'tbastos/vim-lua', { 'for': 'lua' }
 
 	" C++ 语法高亮增强，支持 11/14/17 标准
-	Plug 'octol/vim-cpp-enhanced-highlight', { 'for': ['c', 'cpp'] }
+	" Plug 'octol/vim-cpp-enhanced-highlight', { 'for': ['c', 'cpp'] }
 
 	" 额外语法文件
-	Plug 'justinmk/vim-syntax-extra', { 'for': ['c', 'bison', 'flex', 'cpp'] }
+	" Plug 'justinmk/vim-syntax-extra', { 'for': ['c', 'bison', 'flex', 'cpp'] }
 
 	" python 语法文件增强
 	Plug 'vim-python/python-syntax', { 'for': ['python'] }
@@ -301,7 +301,11 @@ if index(g:bundle_group, 'airline') >= 0
 	let g:airline#extensions#fugitiveline#enabled = 0
 	let g:airline#extensions#csv#enabled = 0
 	let g:airline#extensions#vimagit#enabled = 0
+	" tabs
+	let g:airline#extensions#tabline#enabled = 1
+	let g:airline#extensions#tabline#fnamenode = ':t'
 endif
+
 
 
 "----------------------------------------------------------------------
@@ -310,6 +314,7 @@ endif
 if index(g:bundle_group, 'nerdtree') >= 0
 	Plug 'scrooloose/nerdtree', {'on': ['NERDTree', 'NERDTreeFocus', 'NERDTreeToggle', 'NERDTreeCWD', 'NERDTreeFind'] }
 	Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+	let g:NERDTreeQuitOnOpen = 1
 	let g:NERDTreeMinimalUI = 1
 	let g:NERDTreeDirArrows = 1
 	let g:NERDTreeHijackNetrw = 0
@@ -609,31 +614,4 @@ let g:ycm_filetype_whitelist = {
 			\ "zimbu":1,
 			\ "ps1":1,
 			\ }
-
-
-
-"----------------------------------------------------------------------
-" YouCompleteMe 默认设置：YCM 需要你另外手动编译安装
-"----------------------------------------------------------------------
-
-" 禁用预览功能：扰乱视听
-let g:ycm_add_preview_to_completeopt = 0
-
-" 禁用诊断功能：我们用前面更好用的 ALE 代替
-let g:ycm_show_diagnostics_ui = 0
-let g:ycm_server_log_level = 'info'
-let g:ycm_min_num_identifier_candidate_chars = 2
-let g:ycm_collect_identifiers_from_comments_and_strings = 1
-let g:ycm_complete_in_strings=1
-let g:ycm_key_invoke_completion = '<c-z>'
-set completeopt=menu,menuone,noselect
-
-" noremap <c-z> <NOP>
-
-" 两个字符自动触发语义补全
-let g:ycm_semantic_triggers =  {
-			\ 'c,cpp,python,java,go,erlang,perl': ['re!\w{2}'],
-			\ 'cs,lua,javascript': ['re!\w{2}'],
-			\ }
-
 
